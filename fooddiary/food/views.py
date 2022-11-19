@@ -15,6 +15,9 @@ def index(request: HttpRequest):
 
 def details(request: HttpRequest, pk: int):
     context = {
-        "food": get_object_or_404(FoodItem, pk=pk)
+        "food": get_object_or_404(
+            FoodItem.objects.select_related("profile"),
+            pk=pk
+        )
     }
     return render(request=request, template_name="food/details.html", context=context)
