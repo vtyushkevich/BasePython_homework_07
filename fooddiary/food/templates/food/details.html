@@ -1,0 +1,13 @@
+{% extends "food/base.html" %}
+
+{% block title %}
+    {{ food.name }} details
+{% endblock %}
+
+{% block body %}
+    <h1>Food <strong>{{ food.name }}</strong></h1>
+        <div>
+            <p> {{ food.manufacturer }} </p>
+        </div>
+    <a href="{% url 'food:index' %}">Back to food list</a>
+{% endblock %}

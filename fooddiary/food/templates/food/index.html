@@ -6,4 +6,11 @@
 
 {% block body %}
     <h1>Food</h1>
+        <ul class="list-group">
+            {% for fooditem in food %}
+            <li class="list-group-item">
+            <a href="{% url 'food:details' fooditem.pk %}">{{ fooditem.name }}</a>
+            </li>
+            {% endfor %}
+        </ul>
 {% endblock %}
