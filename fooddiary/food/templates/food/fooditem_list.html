@@ -1,0 +1,16 @@
+{% extends "food/base.html" %}
+
+{% block title %}
+    Food list
+{% endblock %}
+
+{% block body %}
+    <h1>Food</h1>
+        <ul class="list-group">
+            {% for fooditem in object_list %}
+            <li class="list-group-item">
+            <a href="{% url 'food:details' fooditem.pk %}">{{ fooditem.name }} [{{ fooditem.kind }}]</a>
+            </li>
+            {% endfor %}
+        </ul>
+{% endblock %}
