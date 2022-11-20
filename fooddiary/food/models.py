@@ -9,6 +9,16 @@ class FoodKind(models.Model):
         return self.name
 
 
+class FoodTypeMeal(models.Model):
+    class Meta:
+        verbose_name_plural = "Meal"
+    name = models.CharField(max_length=32)
+    desc = models.TextField(blank=True, null=False)
+
+    def __str__(self):
+        return self.name
+
+
 class FoodItem(models.Model):
     name = models.CharField(max_length=200)
     manufacturer = models.CharField(max_length=200)
@@ -36,11 +46,3 @@ class FoodProfile(models.Model):
         return f"Food {self.food.pk} from {self.origin}"
 
 
-class FoodTypeMeal(models.Model):
-    class Meta:
-        verbose_name_plural = "Meal"
-    name = models.CharField(max_length=32)
-    desc = models.TextField(blank=True, null=False)
-
-    def __str__(self):
-        return self.name
