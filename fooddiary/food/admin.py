@@ -2,7 +2,7 @@ from typing import TYPE_CHECKING
 
 from django.contrib import admin
 
-from .models import FoodItem, FoodProfile, FoodKind
+from .models import FoodItem, FoodProfile, FoodKind, FoodTypeMeal
 
 if TYPE_CHECKING:
     admin.site: admin.AdminSite
@@ -22,4 +22,9 @@ class FoodProfileAdmin(admin.ModelAdmin):
 
 @admin.register(FoodKind)
 class FoodKindAdmin(admin.ModelAdmin):
+    list_display = "pk", "name", "desc"
+
+
+@admin.register(FoodTypeMeal)
+class FoodTypeMealAdmin(admin.ModelAdmin):
     list_display = "pk", "name", "desc"

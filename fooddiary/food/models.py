@@ -18,6 +18,7 @@ class FoodItem(models.Model):
     carb_contents = models.PositiveIntegerField()
     protein_contents = models.PositiveIntegerField()
     kind = models.ForeignKey(FoodKind, on_delete=models.PROTECT, related_name="fooditem")
+    meal = models.ManyToManyField("food.FoodTypeMeal", related_name="food")
 
     def __str__(self):
         return self.name
@@ -33,3 +34,13 @@ class FoodProfile(models.Model):
 
     def __str__(self):
         return f"Food {self.food.pk} from {self.origin}"
+
+
+class FoodTypeMeal(models.Model):
+    class Meta:
+        verbose_name_plural = "Meal"
+    name = models.CharField(max_length=32)
+    desc = models.TextField(blank=True, null=False)
+
+    def __str__(self):
+        return self.name

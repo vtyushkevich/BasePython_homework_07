@@ -8,7 +8,7 @@ def index(request: HttpRequest):
 
     # return HttpResponse(f"<h1>Hello path <code>{request.path}</code><h1>")
     context = {
-        "food": FoodItem.objects.order_by("pk").all()
+        "food": FoodItem.objects.select_related("kind").order_by("kind").all()
     }
     return render(request=request, template_name="food/index.html", context=context)
 
@@ -16,7 +16,7 @@ def index(request: HttpRequest):
 def details(request: HttpRequest, pk: int):
     context = {
         "food": get_object_or_404(
-            FoodItem.objects.select_related("profile"),
+            FoodItem.objects.select_related("profile", "kind"),
             pk=pk
         )
     }
