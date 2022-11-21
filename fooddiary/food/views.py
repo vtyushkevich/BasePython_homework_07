@@ -16,8 +16,13 @@ def index(request: HttpRequest):
 
 class FoodListView(ListView):
     # model = FoodItem
+    context_object_name = "foodlist"
     queryset = (
-        FoodItem.objects.select_related("kind").order_by("kind").all()
+        FoodItem
+        .objects
+        .select_related("kind")
+        .order_by("pk")
+        .all()
     )
 
 

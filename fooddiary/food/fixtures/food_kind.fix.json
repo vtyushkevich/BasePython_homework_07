@@ -1,0 +1,1 @@
+[{"model": "food.foodkind", "pk": 0, "fields": {"name": "undef", "desc": "temp"}}, {"model": "food.foodkind", "pk": 1, "fields": {"name": "Milky", "desc": "Milky"}}, {"model": "food.foodkind", "pk": 2, "fields": {"name": "Bird", "desc": "Bird"}}, {"model": "food.foodkind", "pk": 3, "fields": {"name": "Fruits", "desc": "Fruits"}}]
