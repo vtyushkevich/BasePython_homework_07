@@ -1,0 +1,1 @@
+[{"model": "food.foodtypemeal", "pk": 1, "fields": {"name": "Breakfast", "desc": "Breakfast"}}, {"model": "food.foodtypemeal", "pk": 2, "fields": {"name": "Main lunch", "desc": "Main lunch"}}, {"model": "food.foodtypemeal", "pk": 3, "fields": {"name": "Dinner", "desc": "Dinner"}}, {"model": "food.foodtypemeal", "pk": 4, "fields": {"name": "Lunch", "desc": "Lunch"}}]
