@@ -1,0 +1,41 @@
+{% extends "food/base.html" %}
+
+{% block title %}
+    {{ food.name }} details
+{% endblock %}
+
+{% block body %}
+    <h1>Food <strong>{{ food.name }}</strong></h1>
+        <div>
+            <p> {{ food.manufacturer }} </p>
+        </div>
+        <div>
+        <h2>Profile:</h2>
+            <div>
+              <div class="row">
+                <div class="col">
+                  Origin:
+                </div>
+                <div class="col">
+                  {{ food.profile.origin }}
+                </div>
+              </div>
+            </div>
+        </div>
+<div>
+      <h2>Meal:</h2>
+        <ul class="list-group">
+{#            {% for meal in fooditem.meal %}#}
+            {% for meal in food.meal.all %}
+            <li class="list-group-item">
+            {{ meal.name }}
+            </li>
+            {% endfor %}
+        </ul>
+ </div>
+
+
+  <div class="my-2">
+    <a href="{% url 'food:index' %}">Back to food list</a>
+  </div>
+{% endblock %}

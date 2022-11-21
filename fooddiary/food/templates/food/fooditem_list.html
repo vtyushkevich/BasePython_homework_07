@@ -7,7 +7,7 @@
 {% block body %}
     <h1>Food</h1>
         <ul class="list-group">
-            {% for fooditem in food %}
+            {% for fooditem in object_list %}
             <li class="list-group-item">
             <a href="{% url 'food:details' fooditem.pk %}">{{ fooditem.name }} [{{ fooditem.kind }}]</a>
             </li>
